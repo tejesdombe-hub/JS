@@ -1,122 +1,136 @@
-// 1. Write a createCounter() function that returns an object with increment, decrement, and getValue methods. The count must not be accessible from outside.
+// 1. Write a createCounter() function that returns 
+// an object with increment, decrement, and getValue methods. 
+// The count must not be accessible from outside.
 
-function createCounter() {
-  let count = 0;
+// console.log("Program 1")
 
-  return {
-    increment() {
-      count++;
-    },
+// function createCounter() {
+//   let count = 0;
 
-    decrement() {
-      count--;
-    },
+//   return {
 
-    getValue() {
-      return count;
-    },
-  };
-}
+//     increment() {
+//       count++;
+//     },
 
-const counter = createCounter();
+//     decrement() {
+//       count--;
+//     },
 
-counter.increment();
-counter.increment();
+//     getValue() {
+//       return count;
+//     },
+//   };
+// }
 
-console.log(counter.getValue());
+// const counter = createCounter();
 
-counter.decrement();
+// counter.increment();
+// counter.increment();
 
-console.log(counter.getValue());
+// console.log(counter.getValue());
 
-console.log(counter.count);
+// counter.decrement();
 
-// 2. Write a once(fn) function that ensures fn is called only the first time.
+// console.log(counter.getValue());
 
-function once(fn) {
-  let called = false;
-  let result;
+// console.log(counter.count);
 
-  return function (...args) {
-    if (!called) {
-      called = true;
-      result = fn(...args);
-    }
+// 2. Write a once(fn) function that ensures fn 
+// is called only the first time.
 
-    return result;
-  };
-}
+// console.log("Program 2")
 
-function greet(name) {
-  console.log("Hello", name);
-  return `Hello ${name}`;
-}
+// function once(fn) {
+//   let called = false;
+//   let result;
 
-const greetOnce = once(greet);
+//   return function (...args) {
+//     if (!called) {
+//       called = true;
+//       result = fn(...args);
+//     }
 
-console.log(greetOnce("Tejes"));
-console.log(greetOnce("Rahul"));
-console.log(greetOnce("Amit"));
+//     return result;
+//   };
+// }
+
+// function greet(name) {
+//   console.log("Hello", name);
+//   return `Hello ${name}`;
+// }
+
+// const greetOnce = once(greet);
+
+// console.log(greetOnce("Tejes"));
+// console.log(greetOnce("Rahul"));
+// console.log(greetOnce("Amit"));
 
 // 3> Write a memoize(fn) that caches results based on arguments.
 
-function memoize(fn) {
-  const cache = new Map();
+// console.log("Program 3")
 
-  return function (...args) {
-    const key = JSON.stringify(args);
 
-    if (cache.has(key)) {
-      return cache.get(key);
-    }
+// function memoize(fn) {
 
-    const result = fn(...args);
+//   const cache = new Map();
 
-    cache.set(key, result);
+//   return function (...args) {
+//     const key = JSON.stringify(args);
 
-    return result;
-  };
-}
+//     if (cache.has(key)) {
+//       return cache.get(key);
+//     }
 
-function add(a, b) {
-  console.log("Calculating...");
-  return a + b;
-}
+//     const result = fn(...args);
 
-const memoizedAdd = memoize(add);
+//     cache.set(key, result);
 
-console.log(memoizedAdd(10, 20));
-console.log(memoizedAdd(10, 20));
-console.log(memoizedAdd(10, 20));
+//     return result;
+//   };
+// }
 
-// 4> Given the classic for loop closure trap with var, fix it in three different ways (let, IIFE, setTimeout with third arg).
+// function add(a, b) {
+//   console.log("Calculating...");
+//   return a + b;
+// }
 
-for (var i = 0; i < 3; i++) {
-  setTimeout(() => {
-    console.log(i);
-  }, 1000);
-}
+// const memoizedAdd = memoize(add);
 
-for (let i = 0; i < 3; i++) {
-  setTimeout(() => {
-    console.log(i);
-  }, 1000);
-}
+// console.log(memoizedAdd(10, 20));
+// console.log(memoizedAdd(10, 20));
+// console.log(memoizedAdd(10, 20));
 
-for (var i = 0; i < 3; i++) {
-  (function (i) {
-    setTimeout(() => {
-      console.log(i);
-    }, 1000);
-  })(i);
-}
+// // 4> Given the classic for loop closure trap with var, fix it in three different ways (let, IIFE, setTimeout with third arg).
 
-for (var i = 0; i < 3; i++) {
-  setTimeout(
-    function (value) {
-      console.log(value);
-    },
-    1000,
-    i,
-  );
-}
+// console.log("Program 4")
+
+// for (var i = 0; i < 3; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   }, 1000);
+// }
+
+// for (let i = 0; i < 3; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   }, 1000);
+// }
+
+// for (var i = 0; i < 3; i++) {
+//   (function (i) {
+//     setTimeout(() => {
+//       console.log(i);
+//     }, 1000);
+//   })(i);
+// }
+
+// for (var i = 0; i < 3; i++) {
+//   setTimeout(
+//     function (value) {
+//       console.log(value);
+//     },
+//     1000,
+//     i,
+//   );
+// }
