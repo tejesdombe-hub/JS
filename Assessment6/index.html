@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-APi</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+
+        font-family: Arial, sans-serif;
+        background: #eef4f7;
+        color: #243447;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        color: #1f3c4d;
+    }
+
+    #city {
+        width: 280px;
+        padding: 12px 15px;
+
+        border: 2px solid #b8cbd3;
+        border-radius: 8px;
+        outline: none;
+
+        font-size: 16px;
+        background-color: #ffffff;
+    }
+
+    #city:focus {
+        border-color: #4f8fa3;
+        box-shadow: 0 0 5px rgba(79, 143, 163, 0.3);
+    }
+
+    .weather {
+        width: 320px;
+        min-height: 220px;
+
+        margin-top: 25px;
+        padding: 20px;
+
+        border: 1px solid #c6d9df;
+        border-radius: 15px;
+
+        background: #ffffff;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #31596b;
+    }
+
+    .submit-btn {
+    margin-top: 15px;
+    padding: 11px 24px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #999b9c;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #171a1b;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+</style>
+
+<body>
+
+    <h2>Enter Your City Name</h2>
+    <input type="text" name="city" id="city" placeholder="Enter Your City name">
+
+    <button class="submit-btn" name="submit" id="submit" >Submit</button>
+
+    <div class="weather" id="weather">
+        <div class="card" id="card" name="card">
+            <h1> <title> Weather Details</title></h1>
+
+        </div>
+    </div>
+
+    <h2></h2>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
